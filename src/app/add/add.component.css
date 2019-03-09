@@ -1,0 +1,36 @@
+.outer-container {
+  margin-top: 5%;
+}
+
+.container {
+  margin-left: 25%;
+  margin-top: 5%;
+  background-color: #ffffff
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 50%;
+  }
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container>* {
+  width: 50%;
+  display: auto;
+  margin: 0px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.alert {
+      padding: 0rem 0rem;
+      margin-bottom: -1rem;
+      max-width: max-content;
+}

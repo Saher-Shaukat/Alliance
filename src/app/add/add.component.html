@@ -1,0 +1,71 @@
+<!-- <div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Input">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div> -->
+<div class="outer-container">
+  <div class="container">
+    <div class="heading">
+      <h1>Add New Beacon</h1>
+    </div>
+    <form class="form-horizontal" style="text-align: -webkit-center; margin-top: 5%" [formGroup]="addBeaconForm">
+      <div class="form-group">
+        <div class="col-sm-10">
+          <mat-form-field>
+            <input matInput form placeholder="Beacon Id" formControlName="beacon_id">
+          </mat-form-field>
+          <div class="alert alert-danger" *ngIf="!addBeaconForm.controls['beacon_id'].valid && (addBeaconForm.controls['beacon_id'].dirty || addBeaconForm.controls['beacon_id'].touched)">Please enter Beacon UUID</div><br />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <mat-form-field>
+            <input matInput placeholder="X-axis" formControlName="location_x">
+          </mat-form-field>
+          <div class="alert alert-danger" *ngIf="!addBeaconForm.controls['location_x'].valid && (addBeaconForm.controls['location_x'].dirty || addBeaconForm.controls['location_x'].touched)">Please enter numbers only</div><br />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <mat-form-field>
+            <input matInput placeholder="Y-axis" formControlName="location_y">
+          </mat-form-field>
+          <div class="alert alert-danger" *ngIf="!addBeaconForm.controls['location_y'].valid && (addBeaconForm.controls['location_y'].dirty || addBeaconForm.controls['location_y'].touched)">Please enter numbers only</div><br />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <mat-form-field>
+            <textarea matInput placeholder="Description" formControlName="description"></textarea>
+          </mat-form-field>
+          <div class="alert alert-danger" *ngIf="!addBeaconForm.controls['description'].valid && (addBeaconForm.controls['description'].dirty || addBeaconForm.controls['description'].touched)">Please enter description</div><br />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <mat-form-field>
+            <mat-select placeholder="Select Adjacent nodes" formControlName="adjacent_node" multiple>
+              <mat-option *ngFor="let node of allNodes" [value]="node.desc">{{node.desc}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="alert alert-danger" *ngIf="!addBeaconForm.controls['adjacent_node'].valid && (addBeaconForm.controls['adjacent_node'].dirty || addBeaconForm.controls['adjacent_node'].touched)">Please select the adjacent node</div><br />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" mat-raised-button (click)='onSubmit()' [disabled]="!addBeaconForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

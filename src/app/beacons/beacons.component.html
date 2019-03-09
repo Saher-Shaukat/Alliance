@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>List of available Beacons</h2>
+  <!-- <p>The .thead-dark class adds a black background to table headers, and the .thead-light class adds a grey background to table headers:</p> -->
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Beacon UUID</th>
+        <th>Location X</th>
+        <th>Location Y</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let beacon of beacons">
+        <td >{{beacon.beacon_uuid}}</td>
+        <td>{{beacon.location_x}}</td>
+        <td>{{beacon.location_y}}</td>
+        <td>{{beacon.desc}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
